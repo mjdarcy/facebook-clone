@@ -22,6 +22,24 @@
    --shadow-color: rgba(0, 0, 0, .25);
 }
 
+@media(prefers-color-scheme: dark) {
+   :root {
+      --fb-blue: #524eee;
+      --fb-black: #ffffff;
+      --fb-red: #ee2340;
+      --fb-green: #6fcf97;
+      --fb-yellow: #f6b024;
+      --fb-bgcolor: #141432;
+      --fb-white: #ffffff;
+      --fb-whitebg: #1d1d42;
+      --dark-color-text: #FFFFFF;
+      --light-color-text: #d4d4dc;
+      --button-link: #524eee;
+      --stories-bg: #524eee;
+      --icon-circle-bg: #6fcf97;
+   }
+}
+
 body {
    background: var(--bg-color);
    font-family: Helvetica, Arial, sans-serif;
@@ -69,6 +87,13 @@ header {
    padding-left: 35px;
    font-weight: 300;
    border: none;
+   margin-right: 20px;
+}
+.header__mobile-button {
+   display: none;
+   justify-content: center;
+   align-items: center;
+   font-size: 1.7rem;
 }
 .header__menu-tabs {
    display: flex;
@@ -556,4 +581,61 @@ header {
    right: -5px;
    font-weight: 700;
    z-index: 3;
+}
+
+@media only screen and (max-width: 1300px) {
+   .header__menu-tabs {
+      display: none;
+   }
+   .feed {
+      width: 100%;
+   }
+}
+@media only screen and (max-width: 1000px) {
+   .sidenav {
+      display: none;
+   }
+}
+@media only screen and (max-width: 768px) {
+   .header__user-img {
+      display: none;
+   }
+   .header__user-name {
+      display: none;
+   }
+   .header__logo-search .fa-search {
+      left: 12px;
+      top: 12px;
+   }
+   .header__logo-search input[type="text"] {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+   }
+   .header__mobile-button {
+      display: flex;
+   }
+   .feed {
+      display: block;
+   }
+   .stories {
+      flex-wrap: nowrap;
+      z-index: 9;
+      padding-bottom: 20px;
+      overflow-x: scroll; 
+   }
+   .stories__video-container {
+      flex: 1 0 auto;
+   }
+   .content-area--feed {
+      width: 100%;
+   }
+}
+@media only screen and (max-width: 411px) {
+   .header__account {
+      display: none ;
+   }
+   .post-types__title {
+      display: none;
+   }
 }
